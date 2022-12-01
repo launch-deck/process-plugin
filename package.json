@@ -1,0 +1,20 @@
+{
+    "name": "@launch-deck/process-plugin",
+    "version": "1.0.0",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "postinstall": "tsc"
+    },
+    "dependencies": {
+        "@launch-deck/common": "latest",
+        "node-addon-api": "^5.0.0"
+    },
+    "peerDependencies": {
+        "electron": "20.3.5"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.9",
+        "typescript": "^4.8.4"
+    }
+}
