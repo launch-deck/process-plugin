@@ -14,12 +14,10 @@
         "name": "David Hamilton",
         "email": "nova706@gmail.com"
     },
-    "peerDependencies": {
-        "electron": "20.3.5"
-    },
     "devDependencies": {
         "@launch-deck/common": "latest",
         "@types/node": "^18.11.9",
+        "electron": "20.3.5",
         "node-addon-api": "^5.0.0",
         "node-loader": "^2.0.0",
         "ts-loader": "^9.4.2",
