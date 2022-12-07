@@ -3,7 +3,7 @@ import * as process from 'process';
 import { Window } from './window.interface';
 import type { Command, CommandInputSelectionOption, Plugin } from "@launch-deck/common";
 
-const processAddon = require('../build/Release/process')
+const processAddon = require('../build/Release/process.node')
 
 enum CommandType {
     START,
@@ -11,7 +11,7 @@ enum CommandType {
     KILL,
 }
 
-const ProcessPlugin: Plugin = {
+module.exports = {
 
     async handleCommand(command: Command): Promise<void> {
 
@@ -80,7 +80,7 @@ const ProcessPlugin: Plugin = {
 
         return commands;
     }
-}
+} as Plugin;
 
 async function startProcess(command: Command): Promise<void> {
 
@@ -177,5 +177,3 @@ function isValidHttpUrl(value: string) {
     }
     return url.protocol === "http:" || url.protocol === "https:";
 }
-
-export default ProcessPlugin;

@@ -23,10 +23,13 @@ jobs:
           # Defaults to the user or organization that owns the workflow file
           scope: '@launch-deck'
       - run: npm ci
+      - name: Build Plugin
+        run: npm run build
       - run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-      - run: npm version prerelease --preid=snapshot -m "Bumping snapshot version [skip ci]"
+      - name: npm version
+        run: npm version prerelease --preid=snapshot -m "Bumping snapshot version [skip ci]"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
